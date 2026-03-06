@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Anton font for headlines */
+.font-anton {
+  font-family: 'Anton', sans-serif;
+}
+
+/* IBM Plex Mono for body */
+.font-mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Custom animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFD600;
+  border: 2px solid #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFFFFF;
+}
+
+/* Selection styling */
+::selection {
+  background: #FFD600;
+  color: #000000;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  background: #1A1A1A;
+  color: #FFFFFF;
+}
+
+/* Drag and drop visual feedback */
+[draggable="true"] {
+  -webkit-user-drag: element;
+}
+
+/* Remove default focus ring, add custom */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 3px solid #FFD600;
+  outline-offset: 2px;
+}
+
+/* Input reset */
+input {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+/* Button reset */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+}
+
+/* Touch improvements for mobile */
+@media (hover: none) {
+  [draggable="true"] {
+    touch-action: none;
+  }
+}
